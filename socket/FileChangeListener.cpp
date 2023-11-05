@@ -1,6 +1,6 @@
-#include "File.hpp"
 #include <fcntl.h>
 #include <sys/socket.h>
+#include "FileChangeListener.hpp"
 
 File::File(std::string path) : _fd(open(path.data(), O_RDONLY)), _path(path) {
     memset(&_event, 0, sizeof(Kevent));
